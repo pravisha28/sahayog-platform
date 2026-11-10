@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-gray-50 text-surface-800;
+  }
+  * {
+    @apply border-surface-200;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-surface-200/80 transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:shadow-lg hover:border-primary-200 hover:-translate-y-0.5;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 active:scale-95 px-5 py-2.5 text-sm shadow-sm hover:shadow-md;
+  }
+  .btn-secondary {
+    @apply btn bg-secondary-600 text-white hover:bg-secondary-700 active:scale-95 px-5 py-2.5 text-sm shadow-sm hover:shadow-md;
+  }
+  .btn-accent {
+    @apply btn bg-accent-500 text-white hover:bg-accent-600 active:scale-95 px-5 py-2.5 text-sm shadow-sm hover:shadow-md;
+  }
+  .btn-outline {
+    @apply btn border-2 border-surface-200 text-surface-700 hover:border-primary-400 hover:text-primary-600 px-5 py-2.5 text-sm;
+  }
+  .btn-ghost {
+    @apply btn text-surface-600 hover:bg-surface-100 px-4 py-2 text-sm;
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-surface-200 bg-white px-4 py-3 text-sm text-surface-800 placeholder-surface-400 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition-all;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+  .badge-green {
+    @apply badge bg-primary-100 text-primary-700;
+  }
+  .badge-blue {
+    @apply badge bg-secondary-100 text-secondary-700;
+  }
+  .badge-orange {
+    @apply badge bg-accent-100 text-accent-700;
+  }
+  .badge-red {
+    @apply badge bg-error-100 text-error-700;
+  }
+  .badge-yellow {
+    @apply badge bg-warning-100 text-warning-700;
+  }
+  .badge-gray {
+    @apply badge bg-surface-100 text-surface-600;
+  }
+  .section-title {
+    @apply text-xl font-bold text-surface-800;
+  }
+  .stat-number {
+    @apply text-3xl md:text-4xl font-extrabold tabular-nums;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
